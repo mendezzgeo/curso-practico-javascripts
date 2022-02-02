@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+  
+    <title>Figuras geometricas | Curso practico de JS</title>
+    <style>
+     :root {
+      --white: #FFFFFF;
+      --black: #000000;
+      --very-light-pink: #929191;
+      --text-input-field: #F7F7F7;
+      --hospital-blue: #27258b;
+      --sm: 14px;
+      --md: 16px;
+      --lg: 18px;
+    }
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+   .figuras{
+       width: 100%;
+       height: 100vh;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+   }
+
+   .figuras-card{
+       display: grid;
+       grid-template-rows: auto 1fr auto;
+       width: 400px;
+       background-color: #F7F7F7;
+       box-shadow: 5px 10px 18px #888888;
+       margin-bottom: 20px;
+       padding: 25px;
+   }
+
+   .form {
+       display: flex;
+       flex-direction: column;
+   }
+
+   .titlulo{
+    font-size: xx-large;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: var(--very-light-pink);
+   }
+   .subTitulo{
+    font-size: medium;
+    margin-bottom: 20px;
+    color: var(--very-light-pink);
+   }
+
+   .titulo-form{
+    font-size: large;
+    color: var(--very-light-pink);
+    text-align: center;
+   }
+
+   .label{
+       font-size: var(--md);
+       color: var(--very-light-pink);
+       margin-bottom: 20px;
+   }
+   .input{
+        border: none;
+        border-radius: 5px;
+        color: var(--very-light-pink);
+        margin-bottom:  10px;
+        height: 35px;
+        padding-left : 10px;
+   }
+
+   .btn{
+        background-color: var(--hospital-blue);
+        border-radius: 5px;
+        padding-bottom: 5px;
+        border: none;
+        margin-bottom: 10px;
+        color: var(--text-input-field);
+        cursor: pointer;
+        font-weight: var(--md);
+        font-weight: bold;
+        height: 35px;
+   }
+    </style>
+</head>
+<body>
+    <script src="./figuras.js"></script>
+    <div class="figuras">
+    <h1 class="titlulo">Figuras Geometricas</h1>
+    <p class ="subTitulo">Este es el primer curso practico de java script</p>
+<!-- Para el cuadrado-->
+    <section>
+        <div class="figuras-card">
+        <h2 class = "titulo-form">Calcula el area y el perimetro del CUADRADO</h2>
+        <form class="form">
+            <label for="inputCuadrado" class ="label">Escribe cuanto mide cada lado de tu cuadrado</label>
+            <input id="inputCuadrado" type="number" class = "input"/>
+            <button type="button" class ="btn" onclick="calcularPerimetroCuadrado()">Calcular el perimitro</button>
+            <button type="button" class ="btn" onclick="calcularAreaCuadrado()">Calcular area</button>
+        </form>
+    </div>
+    </section>
+
+    <!-- Para el cuadrado-->
+    <section>
+        <div class="figuras-card">
+        <h2 class = "titulo-form">Calcula el area y el perimetro del TRIANGULO</h2>
+        <form class="form">  
+            <label for="inputTrianguloL1" class ="label">Escribe cuanto mide el lado 1 del triangulo</label>
+            <input id="inputTrianguloL1" type="number" class = "input"/>
+
+            <label for="inputTrianguloL2" class ="label">Escribe cuanto mide el lado 2 del triangulo</label>
+            <input id="inputTrianguloL2" type="number" class = "input"/>
+
+            <label for="inputTrianguloBase" class ="label">Escribe cuanto mide la base del triangulo</label>
+            <input id="inputTrianguloBase" type="number" class = "input"/>
+
+            <label for="inputTrianguloAltura" class ="label">Escribe cuanto mide la altura del triangulo</label>
+            <input id="inputTrianguloAltura" type="number" class = "input"/>
+            
+            <button type="button" class ="btn" onclick="calcularPerimetroTriangulo()">Calcular el perimitro</button>
+            <button type="button" class ="btn" onclick="calcularAreaTriangulo()">Calcular area</button>
+            <button type="button" class ="btn" onclick="isocelesArea()">Calcular area Isoceles</button>
+        </form>
+        </div>
+    </section>
+    
+    <!-- Para el cuadrado-->
+    <section>
+        <div class="figuras-card">
+        <h2 class = "titulo-form">Calcula el area y el perimetro del CIRCULO</h2>
+        <form class="form">
+            <label for ="inputRadio" class ="label" class = "input">Escribe cuando mide el radio del circulo</label>
+            <input id ="inputRadio" type="number" class = "input"/>
+
+            <button type="button" class ="btn" onclick="calcularDiametroCirculo()">Calcular el diametro</button>
+            <button type="button" class ="btn" onclick="calcularPerimetroCirculo()">Calcular perimetro</button>
+            <button type="button" class ="btn" onclick="calcularAreaCirculo()">Calcular area</button>
+        </form>
+    </div>
+    </section>
+</div>
+</body>
+</html>
